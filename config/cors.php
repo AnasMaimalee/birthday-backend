@@ -1,21 +1,26 @@
 <?php
 
 return [
-    'paths' => [
-        'api/*',
-        'broadcasting/auth',
-    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cross-Origin Resource Sharing (CORS) Configuration
+    |--------------------------------------------------------------------------
+    */
+
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        'http://localhost:5173',
-        'https://area-desire-sponsor-accordingly.trycloudflare.com',
-        'https://sadiya-vs-anas-birthday.vercel.app/'
+        'http://localhost:5173',                              // Vite dev
+        'http://localhost:3000',                              // Next.js dev if any
+        'https://sadiya-vs-anas-birthday.vercel.app',         // ← your real Vercel domain (NO trailing slash!)
     ],
 
     'allowed_origins_patterns' => [
-        '/^https:\/\/.*\.trycloudflare\.com$/',
+        '/^https:\/\/.*\.vercel\.app$/',                      // catches all Vercel preview / branch domains
+        '/^https:\/\/.*\.trycloudflare\.com$/',               // your tunnel
     ],
 
     'allowed_headers' => ['*'],
