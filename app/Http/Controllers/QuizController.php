@@ -10,21 +10,13 @@ class QuizController extends Controller
 {
     public function store(Request $request)
     {
-        $response = QuizResponse::create([
-            'wedding_day' => $request->wedding_day,
-            'dinner_day' => $request->dinner_day,
-            'favorite_food' => $request->favorite_food,
-            'dress_style' => $request->dress_style,
-            'kids' => $request->kids,
-            'weekend_activity' => $request->weekend_activity,
-            'honeymoon' => $request->honeymoon,
-            'anniversary_trip' => $request->anniversary_trip,
-        ]);
+        $response = QuizResponse::create($request->all());
 
         return response()->json([
-            'message' => 'Response saved ❤️',
-            'data' => $response
+            "message" => "Saved",
+            "data" => $response
         ]);
+
     }
 
     public function index()

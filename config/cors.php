@@ -10,7 +10,8 @@ return [
 
     'allowed_origins' => [
         'http://localhost:5173',
-        'https://area-desire-sponsor-accordingly.trycloudflare.com'
+        'https://area-desire-sponsor-accordingly.trycloudflare.com',
+        'https://sadiya-vs-anas-birthday.vercel.app/'
     ],
 
     'allowed_origins_patterns' => [
